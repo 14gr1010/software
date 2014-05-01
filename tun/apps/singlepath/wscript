@@ -1,0 +1,86 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+def build(bld):
+    inlude_dirs = ['../../src']
+
+    pc_kodo = bld.program(
+        features = 'cxx',
+        source = ['pc_kodo.cpp'],
+        target = 'pc_kodo',
+        includes = inlude_dirs,
+        cxxflags = bld.cxx_flags,
+        use = bld.kodo_use,
+        lib = ['pthread'])
+
+    pc_kodo = bld.program(
+        features = 'cxx',
+        source = ['pc_recoder.cpp'],
+        target = 'pc_recoder',
+        includes = inlude_dirs,
+        cxxflags = bld.cxx_flags,
+        use = bld.kodo_use,
+        lib = ['pthread'])
+
+    pc_kodo = bld.program(
+        features = 'cxx',
+        source = ['pc_kodo_xor.cpp'],
+        target = 'pc_kodo_xor',
+        includes = inlude_dirs,
+        cxxflags = bld.cxx_flags,
+        use = bld.kodo_use,
+        lib = ['pthread'])
+
+    pc_xor = bld.program(
+        features = 'cxx',
+        source = ['pc_xor.cpp'],
+        target = 'pc_xor',
+        includes = inlude_dirs,
+        cxxflags = bld.cxx_flags,
+        use = ['quit'],
+        lib = ['pthread'])
+
+    pc_xora = bld.program(
+        features = 'cxx',
+        source = ['pc_xora.cpp'],
+        target = 'pc_xora',
+        includes = inlude_dirs,
+        cxxflags = bld.cxx_flags,
+        use = ['quit'],
+        lib = ['pthread'])
+
+#    pc_local = bld.program(
+#        features = 'cxx',
+#        source = ['pc_local.cpp'],
+#        target = 'pc_local',
+#        includes = inlude_dirs,
+#        cxxflags = bld.cxx_flags,
+#        use = bld.kodo_use,
+#        lib = ['pthread'])
+
+#    pc_multisetup = bld.program(
+#        features = 'cxx',
+#        source = ['pc_multisetup.cpp'],
+#        target = 'pc_multisetup',
+#        includes = inlude_dirs,
+#        cxxflags = bld.cxx_flags,
+#        use = bld.kodo_use,
+#        lib = ['pthread'])
+
+#    split = bld.program(
+#        features = 'cxx',
+#        source = ['ip_split.cpp'],
+#        target = 'ip_split',
+#        includes = inlude_dirs,
+#        cxxflags = bld.cxx_flags,
+#        use = bld.kodo_use,
+#        lib = ['pthread'])
+
+#    pc_no = bld.program(
+#        features = 'cxx',
+#        source = ['pc_no.cpp'],
+#        target = 'pc_no',
+#        includes = inlude_dirs,
+#        cxxflags = bld.cxx_flags,
+#        use = ['quit'],
+#        lib = ['pthread'])

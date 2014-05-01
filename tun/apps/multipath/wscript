@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+def build(bld):
+    inlude_dirs = ['../../src']
+
+    pc_kodo = bld.program(
+        features = 'cxx',
+        source = ['pc_kodo.cpp'],
+        target = 'pc_kodo',
+        includes = inlude_dirs,
+        cxxflags = bld.cxx_flags,
+        use = bld.kodo_use,
+        lib = ['pthread'])
+
+    pc_kodo = bld.program(
+        features = 'cxx',
+        source = ['pc_kodo_dist.cpp'],
+        target = 'pc_kodo_dist',
+        includes = inlude_dirs,
+        cxxflags = bld.cxx_flags,
+        use = bld.kodo_use,
+        lib = ['pthread'])
+
