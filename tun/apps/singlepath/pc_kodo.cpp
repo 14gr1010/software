@@ -4,6 +4,8 @@
 #include "quit.hpp"
 #include "layers/kodo_on_the_fly_redundancy.hpp"
 
+#include "../help_strings.hpp"
+
 int main(int argc, char** argv)
 {
     char tun[6];
@@ -16,6 +18,17 @@ int main(int argc, char** argv)
     {
         std::cout << strrchr(argv[0], '/')+1 << " [tunif] [kodo redundancy factor] [decode stat file] [local ip] [remote ip] [local port = 55555] [remote port = 55555]" << std::endl;
         std::cout << "Listening for 'print_decode_stat' on 127.0.0.1:54321 (UDP)" << std::endl;
+
+        std::cout << std::endl
+                  << "[tunif]                     " TUNIF_HELP_STRING << std::endl
+                  << "[kodo redundancy factor]    " KODO_REDUNDANCY_FACTOR_HELP_STRING << std::endl
+                  << "[decode stat file]          " DECODE_STAT_FILE_HELP_STRING << std::endl
+                  << "[local ip]                  " LOCAL_IP_HELP_STRING << std::endl
+                  << "[remote ip]                 " REMOTE_IP_HELP_STRING << std::endl
+                  << "[local port]                " LOCAL_PORT_HELP_STRING << std::endl
+                  << "[remote port]               " REMOTE_PORT_HELP_STRING << std::endl
+                  << std::endl;
+
         return 1;
     }
 

@@ -2,8 +2,9 @@
 
 #include "pc.hpp"
 #include "quit.hpp"
-
 #include "layers/xor_adaptive_redundancy.hpp"
+
+#include "../help_strings.hpp"
 
 int main(int argc, char** argv)
 {
@@ -16,6 +17,14 @@ int main(int argc, char** argv)
     if (argc != 4)
     {
         std::cout << strrchr(argv[0], '/')+1 << " [tunif] [local ip] [remote ip]" << std::endl;
+
+        std::cout << std::endl
+                  << "Uses UDP port 55555 to send and receive, on both nodes" << std::endl
+                  << "[tunif]                     " TUNIF_HELP_STRING << std::endl
+                  << "[local ip]                  " LOCAL_IP_HELP_STRING << std::endl
+                  << "[remote ip]                 " REMOTE_IP_HELP_STRING << std::endl
+                  << std::endl;
+
         return 1;
     }
 
