@@ -1,5 +1,7 @@
 #pragma once
 
+// #define VERBOSE 1
+
 #include <map> // std::map
 #include <vector> // std::vector
 #include <kodo/rlnc/on_the_fly_codes.hpp>
@@ -128,6 +130,11 @@ public:
         }
 
         buf->clear();
+
+#if defined(VERBOSE) || defined(KODO_VERBOSE)
+        uint32_t tmp = (d->decoder->rank() * tx_redundancy) - d->delivered_pkts;
+        printf("Amount of recoded pkts: %u, rank=%u, tx_redundancy=%f, delivered_pkts=%u, gensize=%u \n", tmp, d->decoder->rank(), tx_redundancy, d->delivered_pkts, d->gen_size);
+#endif
         if (d->decoder->rank() * tx_redundancy > d->delivered_pkts)
         {
             uint32_t amount_of_pkts = (d->decoder->rank() * tx_redundancy) - d->delivered_pkts;

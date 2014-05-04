@@ -45,11 +45,13 @@ int main(int argc, char** argv)
     recoder r(local_ip_1, local_port_1, remote_ip_1, remote_port_1,
               local_ip_2, local_port_2, remote_ip_2, remote_port_2);
 
-    double redundancy1 = atoi(argv[1])/100.0;
-    double redundancy2 = atoi(argv[6])/100.0;
+    // redundancy is applied on the receiving udp stack ->
+    //  redundancy for link 2 is applied on the link 1 receiving stack.
+    double redundancy2 = atoi(argv[1])/100.0;
+    double redundancy1 = atoi(argv[6])/100.0;
     r.udp1->parse({ {"kodo::tx_redundancy", redundancy1} });
     r.udp2->parse({ {"kodo::tx_redundancy", redundancy2} });
-    
+
     wait_for_quit();
 
     return 0;
