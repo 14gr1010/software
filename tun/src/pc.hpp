@@ -186,11 +186,14 @@ private:
                 if (strcmp("print_drop_stat", (char*)buf->head) == 0)
                 {
                     udp->print_drop_stat();
+                    std::cout << "Print complete" << std::endl;
                 }
                 else if (strcmp("print_decode_stat", (char*)buf->head) == 0)
                 {
                     tun->print_decode_stat(fio);
                     fio << std::endl;
+                    fio.close();
+                    std::cout << "Print complete" << std::endl;
                     exit(0);
                 }
                 else
