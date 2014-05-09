@@ -3,7 +3,6 @@ One of the dependencies is Boost, and to install it on Debian/Ubuntu run (X.YZ >
     sudo apt-get install libboostX.YZ-dev
 
 To configure waf and download additional dependencies from GitHub:
-    mkdir -p ../dependencies
     ./waf configure --bundle=ALL --bundle-path=../dependencies/ --options=cxx_debug
 
 To build all executables:
