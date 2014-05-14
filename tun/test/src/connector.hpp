@@ -8,5 +8,6 @@ void create_connector_class_5();
 void create_connector_class_6();
 void create_connector_class_7();
 void create_recoder_class_1();
+void create_forwarder_class_1();
 void create_connector_multipath_class_1();
 

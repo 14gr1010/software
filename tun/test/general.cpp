@@ -23,6 +23,7 @@ int main(int argc, char** argv)
     ADD_TEST_CASE(connector, create_connector_class_6);
     ADD_TEST_CASE(connector, create_connector_class_7);
     ADD_TEST_CASE(connector, create_recoder_class_1);
+    ADD_TEST_CASE(connector, create_forwarder_class_1);
     ADD_TEST_CASE(connector, create_connector_multipath_class_1);
 
     ADD_TEST_CASE(stack_args, args_1);

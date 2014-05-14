@@ -9,6 +9,7 @@
 #include "pc.hpp"
 #include "pc_multipath.hpp"
 #include "pc_recoder.hpp"
+#include "pc_forwarder.hpp"
 #include "layers/no_redundancy.hpp"
 #include "layers/xor_fixed_redundancy.hpp"
 #include "layers/xor_adaptive_redundancy.hpp"
@@ -166,6 +167,29 @@ void create_recoder_class_1()
 
     recoder c(local_ip_1, local_port_1, remote_ip_1, remote_port_1, 
               local_ip_2, local_port_2, remote_ip_2, remote_port_2);
+
+    const timespec T = {0, 100000};
+    int r = nanosleep(&T, NULL);
+    TEST_EQ(r, 0);
+
+    CONCLUDE_TEST_CASE;
+}
+
+void create_forwarder_class_1()
+{
+    INIT_TEST_CASE;
+
+    const char local_ip_1[] = "127.0.0.1";
+    const char local_port_1[] = "55555";
+    const char remote_ip_1[] = "127.0.0.1";
+    const char remote_port_1[] = "55556";
+    const char local_ip_2[] = "127.0.0.1";
+    const char local_port_2[] = "55557";
+    const char remote_ip_2[] = "127.0.0.1";
+    const char remote_port_2[] = "55558";
+
+    forwarder c(local_ip_1, local_port_1, remote_ip_1, remote_port_1, 
+                local_ip_2, local_port_2, remote_ip_2, remote_port_2);
 
     const timespec T = {0, 100000};
     int r = nanosleep(&T, NULL);
