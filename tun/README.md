@@ -17,7 +17,8 @@ For the coded tunnels (requires a tun interface, see below) run the executables 
 
 The coded tunnel executables require a various command line parameters, and by running the executable without parameters shows the order in which they must be provided.
 
-Create a TUN interface, in this case we create tun0 with ip 10.0.0.1:
+Create a TUN interface (requires root), in this case we create tun0 with ip 10.0.0.1:
     ./scripts/tun_setup.sh tun0 10.0.0.1
+
 
 Some tests are known to fail on low performance setups.
