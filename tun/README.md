@@ -8,15 +8,13 @@ To configure waf and download additional dependencies from GitHub:
 To build all executables:
     ./waf
 
-To run the test (requires a tun interface, see below), run the executable in:
+To run the test (requires a tun0 interface, see below), run the executable in:
     ./build/test
 Some tests are known to fail on low performance setups.
-
 
 For the coded tunnels (requires a tun interface, see below) run the executables in either (depending on the setup):
     ./build/apps/singlepath
     ./build/apps/multipath
-
 The coded tunnel executables require a various command line parameters, and by running the executable without parameters shows the order in which they must be provided.
 
 Create a TUN interface, in this case we create tun0 with ip 10.0.0.1:
