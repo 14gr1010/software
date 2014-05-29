@@ -13,7 +13,7 @@ def build(bld):
         use = bld.kodo_use,
         lib = ['pthread'])
 
-    pc_kodo = bld.program(
+    pc_recoder = bld.program(
         features = 'cxx',
         source = ['pc_recoder.cpp'],
         target = 'pc_recoder',
@@ -22,7 +22,7 @@ def build(bld):
         use = bld.kodo_use,
         lib = ['pthread'])
 
-    pc_kodo = bld.program(
+    pc_forwarder = bld.program(
         features = 'cxx',
         source = ['pc_forwarder.cpp'],
         target = 'pc_forwarder',
@@ -31,7 +31,7 @@ def build(bld):
         use = bld.kodo_use,
         lib = ['pthread'])
 
-    pc_kodo = bld.program(
+    pc_kodo_xor = bld.program(
         features = 'cxx',
         source = ['pc_kodo_xor.cpp'],
         target = 'pc_kodo_xor',
