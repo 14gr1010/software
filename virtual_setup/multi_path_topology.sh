@@ -122,8 +122,8 @@ done
 
 ## Start openflow controller - launch openflow.discovery for link discovery
 echo Setting up controller
-# tmux new-window -dk -t 5 "~/git/pox/pox.py log.level --INFO openflow.spanning_tree --no-flood --hold-down"
-tmux new-window -dk -t 5 "~/git/pox/pox.py log.level --WARNING openflow.discovery mphardswitch"
+
+tmux new-window -dk -t 5 "$PWD/../pox/pox.py log.level --WARNING openflow.discovery mphardswitch"
 
 echo "Waiting 20s for nodes to start..."
 sleep 1
