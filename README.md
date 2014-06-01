@@ -18,4 +18,4 @@ Folder "pox" contains the version of pox software used for some of the results i
 
 Archive results.tar.bz2 contains results obtained previously, along with plotting scripts.
 Extract with
-        tar -xvf results.tar.bz2
+    tar -xvf results.tar.bz2
