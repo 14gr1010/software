@@ -36,6 +36,7 @@ To copy the public key to the node, use
 	ssh-copy-id [-i keyfile] node@10.0.2.1
 The ssh-copy-id will choose the default public key if no keyfile is specified.
 
+The login and pass for the virtual machine is "node" // "node"   (user // password)
 
 Hostnames can be setup on the host OS for quick access to the nodes:
 
