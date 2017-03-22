@@ -50,15 +50,15 @@ int main(int argc, char** argv)
     ADD_TEST_CASE(xor_redundancy, xor_redundancy_2);
     ADD_TEST_CASE(xor_redundancy, xor_redundancy_3);
 
-    ADD_TEST_CASE(kodo, kodo_1);
-    ADD_TEST_CASE(kodo, kodo_2);
-    ADD_TEST_CASE(kodo, kodo_3);
-    ADD_TEST_CASE(kodo, kodo_4);
-    ADD_TEST_CASE(kodo, kodo_5);
-    ADD_TEST_CASE(kodo, kodo_6);
-    ADD_TEST_CASE(kodo, kodo_7);
-    ADD_TEST_CASE(kodo, kodo_8);
-    ADD_TEST_CASE(kodo, kodo_9);
+//    ADD_TEST_CASE(kodo, kodo_1);
+//    ADD_TEST_CASE(kodo, kodo_2);
+//    ADD_TEST_CASE(kodo, kodo_3);
+//    ADD_TEST_CASE(kodo, kodo_4);
+//    ADD_TEST_CASE(kodo, kodo_5);
+//    ADD_TEST_CASE(kodo, kodo_6);
+//    ADD_TEST_CASE(kodo, kodo_7);
+//    ADD_TEST_CASE(kodo, kodo_8);
+//    ADD_TEST_CASE(kodo, kodo_9);
 
     ADD_TEST_CASE(filter, filter_1);
     ADD_TEST_CASE(filter, filter_2);

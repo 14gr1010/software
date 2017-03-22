@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cmath>
+
 #include "misc.hpp"
 #include "pkt_buffer.hpp"
 #include "xor_fixed_redundancy.hpp"
@@ -47,7 +49,7 @@ private:
     uint8_t calc_redundancy_rate(p_pkt_buffer& buf)
     {
         double channel = 1;
-        if (isnan(buf->drop_stat))
+        if (std::isnan(buf->drop_stat))
         {
             channel = fixed::get_channel_success_rate();
 #ifdef VERBOSE

@@ -2,7 +2,7 @@
 
 #include <cassert>  // assert()
 #include <iostream> // std::cout()
-#include <boost/date_time/posix_time/posix_time.hpp> // time_stamp
+#include <chrono>   // std::chrono
 
 #include "args.hpp"
 
@@ -45,10 +45,7 @@ while (0)
 
 inline uint64_t time_stamp()
 {
-    namespace bpt = boost::posix_time;
-//    static bpt::ptime start(boost::gregorian::date(1970,1,1));
-    static bpt::ptime start = bpt::microsec_clock::local_time();
-    bpt::ptime now = bpt::microsec_clock::local_time();
-    bpt::time_duration diff = now - start;
-    return diff.total_microseconds();
+    namespace sc = std::chrono;
+    static std::chrono::microseconds::rep start = sc::duration_cast<sc::microseconds>(sc::high_resolution_clock::now().time_since_epoch()).count();
+    return sc::duration_cast<sc::microseconds>(sc::high_resolution_clock::now().time_since_epoch()).count() - start;
 }

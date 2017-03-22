@@ -3,11 +3,10 @@
 
 def build(bld):
     bld.program(features = 'cxx',
-                source = ['general.cpp', 'src/pkt_buffers.cpp', 'src/delay_pkt.cpp', 'src/xor_redundancy.cpp', 'src/kodo.cpp', 'src/drop_pkt.cpp', 'src/file_layer.cpp', 'src/stack_args.cpp', 'src/connector.cpp', 'src/filter.cpp', 'src/generators.cpp'],
+                source = ['general.cpp', 'src/pkt_buffers.cpp', 'src/delay_pkt.cpp', 'src/xor_redundancy.cpp', 'src/drop_pkt.cpp', 'src/file_layer.cpp', 'src/stack_args.cpp', 'src/connector.cpp', 'src/filter.cpp', 'src/generators.cpp'],
                 target = 'general',
                 includes = ['../src', 'src'],
                 cxxflags = bld.cxx_flags,
-                use = bld.kodo_use,
                 lib = ['pthread'])
 
 #    profiling_flags = ['-fprofile-arcs', '-ftest-coverage', '--coverage', '-O0']

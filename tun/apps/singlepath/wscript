@@ -4,23 +4,23 @@
 def build(bld):
     inlude_dirs = ['../../src']
 
-    pc_kodo = bld.program(
-        features = 'cxx',
-        source = ['pc_kodo.cpp'],
-        target = 'pc_kodo',
-        includes = inlude_dirs,
-        cxxflags = bld.cxx_flags,
-        use = bld.kodo_use,
-        lib = ['pthread'])
+#    pc_kodo = bld.program(
+#        features = 'cxx',
+#        source = ['pc_kodo.cpp'],
+#        target = 'pc_kodo',
+#        includes = inlude_dirs,
+#        cxxflags = bld.cxx_flags,
+#        use = bld.kodo_use,
+#        lib = ['pthread'])
 
-    pc_recoder = bld.program(
-        features = 'cxx',
-        source = ['pc_recoder.cpp'],
-        target = 'pc_recoder',
-        includes = inlude_dirs,
-        cxxflags = bld.cxx_flags,
-        use = bld.kodo_use,
-        lib = ['pthread'])
+#    pc_recoder = bld.program(
+#        features = 'cxx',
+#        source = ['pc_recoder.cpp'],
+#        target = 'pc_recoder',
+#        includes = inlude_dirs,
+#        cxxflags = bld.cxx_flags,
+#        use = bld.kodo_use,
+#        lib = ['pthread'])
 
     pc_forwarder = bld.program(
         features = 'cxx',
@@ -28,17 +28,17 @@ def build(bld):
         target = 'pc_forwarder',
         includes = inlude_dirs,
         cxxflags = bld.cxx_flags,
-        use = bld.kodo_use,
+        use = ['quit'],
         lib = ['pthread'])
 
-    pc_kodo_xor = bld.program(
-        features = 'cxx',
-        source = ['pc_kodo_xor.cpp'],
-        target = 'pc_kodo_xor',
-        includes = inlude_dirs,
-        cxxflags = bld.cxx_flags,
-        use = bld.kodo_use,
-        lib = ['pthread'])
+#    pc_kodo_xor = bld.program(
+#        features = 'cxx',
+#        source = ['pc_kodo_xor.cpp'],
+#        target = 'pc_kodo_xor',
+#        includes = inlude_dirs,
+#        cxxflags = bld.cxx_flags,
+#        use = bld.kodo_use,
+#        lib = ['pthread'])
 
     pc_xor = bld.program(
         features = 'cxx',

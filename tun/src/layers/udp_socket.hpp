@@ -4,6 +4,7 @@
 #include <cstring> // memset
 #include <errno.h> // errno
 #include <iostream>
+#include <unistd.h> // close
 
 #include "misc.hpp"
 #include "pkt_buffer.hpp"

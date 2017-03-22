@@ -5,6 +5,7 @@
 #include <string>
 #include <signal.h>
 #include <stdint.h>
+#include <cstring>
 
 #include "misc.hpp"
 
