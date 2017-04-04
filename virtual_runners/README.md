@@ -1,4 +1,4 @@
-In order to run set virtual setup configurations, some dependencies must be met. 
+In order to run set virtual setup configurations, some dependencies must be met.
 
 The following dependencies must be installed:
 
@@ -11,7 +11,10 @@ The versions shipped with ubuntu 14.04 package manager (apt-get) has been used.
 Apart from this, the ubuntu image files must be fetched. This can be done with the following terminal commands
 
 Download:
-	wget https://dl.dropboxusercontent.com/u/2347095/virtuals.tar.bz2 
+	wget https://www.dropbox.com/s/qucjmillkuo1t25/virtuals.tar.bz2?dl=0
+
+	# Alternative download mirror
+	# wget http://kom.aau.dk/group/13gr810/virtuals.tar.bz2
 
 Unpack:
 	tar -xvf virtuals.tar.bz2
@@ -19,7 +22,7 @@ Unpack:
 The virtual images are 64-bit, requiring the host OS to be 64 bit as well.
 
 Furthermore, the ip_forward script must be included in the path:
-	
+
 	cp ip_forward /usr/local/bin/ip_forward
 	chmod +x /usr/local/bin/ip_forward
 
@@ -56,5 +59,3 @@ and node2 with
 
 The "share" parameter in the setup scripts needs to correspond with the coding location in the runner scripts. The "share" location is mounted in ~/share directory in the virtual machines (requires sudo mount hostshare call in the guest OS's, but this is called in the setup scripts). The coding can also be fetched and built directly on the virtual machines. If this method is preffered, fetch and build the code inside the base machines (by launching the virtual machine with "./base.sh" or "./base_mptcp.sh") for the changes to persist.
 Changes made to the virtual machines launched with the remaining setup scripts does not persist between launches.
-
-
